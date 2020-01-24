@@ -1,9 +1,6 @@
 ﻿@{
     Layout = null;
-    var seriesTitle = "Captain Marvel";
-    int issueNumber = 1;
-    var description = "<p>Carol Danvers has a new codename and is determined to prove herself the best of the best! She's forging a new future for herself as Captain Marvel, but finds that she still can't walk away from a challenge from her past! It's a firefight in the sky as the Banshee Squadron debut - but who are the Prowlers, and where has Carol seen them before? Witness her in blazing battlefield action that just may change the course of history! Then, the Avengers' new Captain Marvel meets their old one - Monica Rambeau! But what's Monica's problem? Can they resolve it before a threat from the ocean depths attacks?</p>";
-    var creators = new string[]{ "DeConnick", "Sebela", "Soy", "Rios", "Anorade"};
+   
 }
 
 <!DOCTYPE html>
@@ -15,19 +12,19 @@
 </head>
 <body>
     <div>
-        <h1>@seriesTitle</h1>
-        <h2>Issue #@issueNumber</h2>
+        <h1>@ViewBag.SeriesTitle</h1>
+        <h2>Issue #@ViewBag.IssueNumber</h2>
 
         <h5>Description:</h5>
-        <div>@Html.Raw(description)</div>
+        <div>@Html.Raw(ViewBag.Description)</div>
 
 
-        @if(creators.Length > 0)
+        @if(ViewBag.Creators.Length > 0)
         {
         <h5>Creators:</h5>
         <div>
             <ul>
-                @foreach (var creator in creators)
+                @foreach (var creator in ViewBag.Creators)
                 {
                     <li>@creator</li>
 
