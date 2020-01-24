@@ -15,14 +15,27 @@
 </head>
 <body>
     <div>
-    <h1>@seriesTitle</h1>
+        <h1>@seriesTitle</h1>
         <h2>Issue #@issueNumber</h2>
 
         <h5>Description:</h5>
         <div>@Html.Raw(description)</div>
 
+
+        @if(creators.Length > 0)
+        {
         <h5>Creators:</h5>
-        <div>@creators</div>
+        <div>
+            <ul>
+                @foreach (var creator in creators)
+                {
+                    <li>@creator</li>
+
+                }
+            </ul>
+        </div>
+        }
+        
     </div>
 </body>
 </html>
